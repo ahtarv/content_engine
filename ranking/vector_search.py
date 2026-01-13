@@ -63,6 +63,7 @@ class VectorSearch:
         results = []
         for score, idx in zip(scores[0], idxs[0]):
             item = metadata[idx].copy()
+            item["vec"] = vectors[idx]
             item["score"] = float(score)
             results.append(item)
 
